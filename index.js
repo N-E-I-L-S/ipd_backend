@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.json())
 
-app.use('/urls', require('./url_controller'));
+app.use('/urls', require('./controller/url_controller.js'));
+app.use('/api/survey', require('./controller/survey_controller.js'))
 
 app.get('/', (req, res)=>{
     const timestamp = new Date().getTime()
